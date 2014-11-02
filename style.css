@@ -146,9 +146,18 @@ footer p {display: block; padding:58px 0 0 0; text-align:center; color:#000; fon
 	color:#452233;
 }
 
+#contentwrap p img {
+	width:200px;
+	height:130px;
+	float:left;
+	margin-right:40px;
+}
+
 #contentwrap p {
 	font-size:14px;
-	line-height: 22px;
-	margin-bottom:18px;
+	line-height: 130px;
+	height:130px;
+	margin-bottom:46px;
 	text-shadow:1px 1px 1px #fff;
+	display:block;
 }
