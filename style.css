@@ -131,7 +131,7 @@ footer p {display: block; padding:58px 0 0 0; text-align:center; color:#000; fon
 
 
 
-#contentwrap p a {
+.articlelist p a {
 	display:block;
 	background: url("images/thinline-h.gif") repeat-x scroll left bottom rgba(0,0,0,0);
 	margin-bottom:5px;
@@ -142,22 +142,28 @@ footer p {display: block; padding:58px 0 0 0; text-align:center; color:#000; fon
 	text-decoration:none;
 }
 
-#contentwrap p a:hover {
+.articlelist p a:hover {
 	color:#452233;
 }
 
-#contentwrap p img {
+.articlelist p img {
 	width:200px;
 	height:130px;
 	float:left;
 	margin-right:40px;
 }
 
-#contentwrap p {
+.articlelist p {
 	font-size:14px;
-	line-height: 130px;
 	height:130px;
 	margin-bottom:46px;
 	text-shadow:1px 1px 1px #fff;
 	display:block;
+}
+
+.singlecontent p {
+	font-size:14px;
+	text-shadow:1px 1px 1px #fff;
+	margin-bottom:18px;
+	line-height:2em;
 }
