@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<title>Create Git Repo From Some Local Files</title>
+	<title>不同的沉默</title>
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<!--[if lt IE9]>
 	<script type="text/javascript" src="js/html5.js"></script>
@@ -42,7 +42,7 @@
 
 <section id="leftcontents">
 <header id="mainheading">
-	<h2>Create Git Repo From Some Local Files</h2>
+	<h2>不同的沉默</h2>
 </header>
 <div id="contentwrap" class="singlecontent">
 
@@ -58,119 +58,39 @@
 
 
 <p>
-So you have some files or a new Rails application, and you want to add this to a new shared remote Git repository. (I’m assuming you have access to your server and are setting up a remote repo over ssh.)
+<img src="/images/juanjun02.jpg" />
 </p>
 
 <p>
-I know I can never remember how to do it, so here’s a post for me and hopefully you!
+一路上我们都没话说
 </p>
 
 <p>
-Create a local Git repository in your application for your local files.
-</p>
-
-<pre>
-
-#On local machine
-cd foo_project
-git init
-git add *
-git commit -m "My initial commit message"
-
-</pre>
-
-<p>
-Now, create the repository on your Git server. All of my git repositories are owned by a user git and located at /usr/local/git_root/. You can change these things accordingly to match your server setup.
-</p>
-
-<pre>
-
-#On remote machine (Git remote repository)
-sudo su - git
-cd /usr/local/git_root/
-
-</pre>
-
-
-<p>
-Create your new project git repo as a bare Git repository
-</p>
-
-<pre>
-
-mkdir foo-project.git
-cd foo-project.git/
-git --bare init
-
-</pre>
-
-<p>
-Make sure permissions are set properly. These are common options I use for my shared repositories
-</p>
-
-<pre>
-
-git config core.sharedrepository 1
-git config receive.denyNonFastforwards true
-find objects -type d -exec chmod 02770 {} \;
-#The core.sharedrepository flag tells git to keep everything group readable and writable.
-#The receive.denyNonFastforwards flag makes sure that merges can't happen when you push to the repo. You have to do the merges on your local machine, and then push the result.
-
-</pre>
-
-<p>
-Now, go back to your local repository, and add the newly created remote repository so it tracks from the remote repository (origin).
-</p>
-
-<pre>
-
-#On local machine, in your git project
-git remote add origin ssh://git@example.com:2227/usr/local/git_root/foo_project.git
-
-</pre>
-
-<p>
-### UPDATED:
-If you are on git 1.7+ you can simply do this:
-</p>
-
-<pre>
-
-git push -u origin master
-
-</pre>
-
-<p>
-You’re done!
+我们眼睛里看的会不会是同一片云朵
 </p>
 
 <p>
-———————-
-If you are on an older version of git, you may need to follow these instructions to make sure your branch tracks the remote branch:
+岁月变成沙漠
 </p>
 
-<pre>
-
-git push origin master
-
-</pre>
 <p>
-Now, to ensure that your local branch is tracking when you do a fetch, you need to use -f option to force a new local branch to be created even though it already exists.
+喧哗变成寂寞
 </p>
 
-<pre>
-
-#Switch to origin/master so you don't get any error about "fatal: Cannot force update the current branch."
-git checkout origin/master
-#Create the local "master" branch that is tracking the "origin/master" branch
-git branch -f master origin/master
-#Switch back to your "master" branch
-git checkout master
-
-</pre>
+<p>
+你是你
+</p>
 
 <p>
-There you have it. You should be able to push changes to origin and fetch changes to your local copy!
+我是我
+</p>
+
+<p>
+虽然可以彼此诉说忧伤
+</p>
+
+<p>
+但是我们的痛苦却一直沉默
 </p>
 
 
