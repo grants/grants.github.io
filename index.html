@@ -10,11 +10,28 @@
 	<link href="html5.css" rel="stylesheet" type="text/css">
 	<![endif]-->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("a[href='content_newest.html']").parent("p").hide();
+		})
+	</script>
+	<script type="text/javascript">
+		function autoResize(id){
+			var newheight;
+			var newwidth;
+			if(document.getElementById){
+				newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
+				newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
+			}
+			document.getElementById(id).height= (newheight) + "px";
+			document.getElementById(id).width= (newwidth) + "px";
+		}
+	</script>
 </head>
 
 <body>
 
-<div id="wrap">
+	<div id="wrap">
 
 	<header id="mainheader">
 		<h1>漆 <span>的博客</span></h1>
@@ -59,9 +76,9 @@
 					<h2>最新文章</h2>
 				</header>
 
-				<iframe src="content_newest.html" frameborder="0" width="100%" seamless="seamless" scrolling="no" height="100%"></iframe>
+				<iframe src="content_newest.html" frameborder="0" width="100%" seamless="seamless" scrolling="no" height="100%" id="content_newest_iframe" onLoad="autoResize('content_newest_iframe');"></iframe>
 
-				<header id="mainheading">
+				<header id="mainheading" style="margin-top:15px">
 					<h2>最新栏目</h2>
 				</header>
 				<div id="contentwrap" class="articlelist">
