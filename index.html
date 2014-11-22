@@ -9,6 +9,7 @@
 	<script type="text/javascript" src="js/html5.js"></script>
 	<link href="html5.css" rel="stylesheet" type="text/css">
 	<![endif]-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -55,10 +56,19 @@
 			<section id="leftcontents">
 
 				<header id="mainheading">
-					<h2>栏目</h2>
+					<h2>最新文章</h2>
 				</header>
 
+				<script type="javascript">
+				$(function() {
+					$("div#content_newest").load("content_newest.html");
+				})
+				</script>
+				<div id="content_newest" class="articlelist"></div>
 
+				<header id="mainheading">
+					<h2>最新栏目</h2>
+				</header>
 				<div id="contentwrap" class="articlelist">
 
 					
@@ -80,6 +90,11 @@
 <img src="/images/hai.jpg" /> 
 <a href="haishinapianhai.html">还是那片海</a> 
 是不是梦里的我不再让你难过
+</p>
+
+
+<p>
+<a href="content_newest.html">最新文章</a>
 </p>
 
 
@@ -126,6 +141,10 @@
 				<p class="testimonial">
 					文字在本质上就是不完整的容器。	
 					<span>村上春树</span>
+				</p>
+				<p class="testimonial">
+					美的东西是不需要灵魂的，只需要美就够了。
+					<span>未知出处</span>
 				</p>
 			</div>
 			
