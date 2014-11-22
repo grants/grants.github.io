@@ -61,10 +61,16 @@
 
 				<script type="javascript">
 				$(function() {
-					$("div#content_newest").load("content_newest.html");
+					$("#content_newest").load("content_newest.html", function(res, status, xhr) {
+						console.log(res);
+					})
 				})
 				</script>
-				<div id="content_newest" class="articlelist"></div>
+				<div id="content_newest_div" class="articlelist">
+					<p id="content_newest">
+					
+					</p>
+				</div>
 
 				<header id="mainheading">
 					<h2>最新栏目</h2>
