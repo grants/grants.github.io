@@ -1,5 +1,6 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!doctype html>
+<html lang="en-US">
+
 <head>
 	<meta charset="UTF-8" />
 	<title>漆的博客</title>
@@ -13,7 +14,15 @@
 		$(function() {
 			$("a[href='content_newest.html']").parent("p").hide();
 			$("a").attr("target", "_top");
+			redirectToXadaili();
 		})
+
+		var redirectToXadaili = function() {
+			var host = window.location.host;
+			if (host == "xadaili.com" || host == "www.xadaili.com") {
+				location.href="http://qicreate.com/xadaili.html";
+			}
+		}
 	</script>
 	<script type="text/javascript">
 		function autoResize(id){
@@ -28,6 +37,7 @@
 		}
 	</script>
 </head>
+
 <body>
 
 	<div id="wrap">
@@ -87,19 +97,19 @@
 <p>
 <img src="/images/aishuoren.jpg" /> 
 <a href="aishuorendejiedao.html">爱说人的街道</a> 
-有些人总是走在回忆的路上，生命不过是一次回溯的旅程
+有些人总是走在回忆的路上，生命不过是一次回溯的旅程.
 </p>
 
 <p>
 <img src="/images/zhuanzai.jpg" /> 
 <a href="zhuanzai.html">转载空间</a> 
-这里都是从网络的角角落落里转载来的东西
+这里都是从网络的角角落落里转载来的东西.
 </p>
 
 <p>
 <img src="/images/hai.jpg" /> 
 <a href="haishinapianhai.html">还是那片海</a> 
-是不是梦里的我不再让你难过
+是不是梦里的我不再让你难过.
 </p>
 
 
@@ -215,5 +225,6 @@
 <footer>
 	<p>2013 &copy; QiCreate.com| 保留所有权利 <img src="http://img.tongji.linezing.com/3538442/tongji.gif" /></p>
 
+</footer>
 </body>
 </html>
