@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>漆的博客</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="js/html5.js"></script>
+	<link href="html5.css" rel="stylesheet" type="text/css">
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("a[href='content_newest.html']").parent("p").hide();
+			$("a").attr("target", "_top");
+			redirectToXadaili();
+		})
+
+		var redirectToXadaili = function() {
+			var host = window.location.host;
+			if (host == "xadaili.com" || host == "www.xadaili.com") {
+				location.href="http://qicreate.com/xadaili.html";
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		function autoResize(id){
+			var newheight;
+			var newwidth;
+			if(document.getElementById){
+				newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
+				newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
+			}
+			document.getElementById(id).height= (newheight) + "px";
+			document.getElementById(id).width= (newwidth) + "px";
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="wrap">
+
+	<header id="mainheader">
+		<h1>漆 <span>的博客</span></h1>
+		<p class="description">别再说 是谁的错 | qicreate.com</p>
+	</header>
+
+	<nav id="topnav">
+		<ul>
+			<li class="active"><a href="index.html">首页</a></li>
+			<li class=""><a href="aishuorendejiedao.html">爱说人的街道</a></li>
+			<li class=""><a href="zhuanzai.html">转载空间</a></li>
+			<li class=""><a href="haishinapianhai.html">还是那片海</a></li>
+
+			<!--
+			<li><a href="portfolio.html">Portfolio</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Archives</a></li>
+			-->
+
+		</ul>
+	</nav>
+
+	<div id="maincontent">
+
+		<section id="leftcontent">
+
+			<header id="pageheader">
+				<h1>漆 // 说不清道不明</h1>
+				<h2 id="introduction">
+					<span>来访者你好，</span>
+					qicreate.com 是无意间在书桌上写出来的一个域名，真的不能代表任何的含义。
+					如果真要说出个来历出处，也只能说是博主喜欢 7 这个数字，再加上 create ，成为了博客的域名。
+					总之，欢迎新老朋友来看看，博主尽量原创，也会转载些有意思的内容给大家看。
+					另外提一句，此处只谈风月，不谈政治。
+				</h2>
+			</header>
+
+			<section id="leftcontents">
+
+				<header id="mainheading">
+					<h2>最新文章</h2>
+				</header>
+
+				<iframe src="content_newest.html" frameborder="0" width="100%" seamless="seamless" scrolling="no" height="100%" id="content_newest_iframe" onLoad="autoResize('content_newest_iframe');"></iframe>
+
+				<header id="mainheading" style="margin-top:30px">
+					<h2>最新栏目</h2>
+				</header>
+				<div id="contentwrap" class="articlelist">
+					
+
+
+<p>
+<img src="/images/aishuoren.jpg" /> 
+<a href="aishuorendejiedao.html">爱说人的街道</a> 
+有些人总是走在回忆的路上，生命不过是一次回溯的旅程.
+</p>
+
+<p>
+<img src="/images/zhuanzai.jpg" /> 
+<a href="zhuanzai.html">转载空间</a> 
+这里都是从网络的角角落落里转载来的东西.
+</p>
+
+<p>
+<img src="/images/hai.jpg" /> 
+<a href="haishinapianhai.html">还是那片海</a> 
+是不是梦里的我不再让你难过.
+</p>
+
+
+<p>
+<a href="content_newest.html">最新文章</a>
+</p>
+
+					<!-- one -->
+					<!--
+					<section class="postinfo">
+						<p class="postdata postdate"><time datetime="2010-05-09T14:28-08:00">09 May, 2010</time></p>
+						<P class="postdata">By Roshan</P>
+					</section>
+					<article class="postpre">
+						<header>
+							<h3>Lorem Ipsum Dolar Sit Amet!</h3>
+						</header>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at sapien ligula. Nunc varius faucibus turpis, nec ornare elit placerat sit amet. Nulla ac faucibus ante. Fusce nulla turpis, gravida eget elementum id, scelerisque quis risus. Curabitur dictum fermentum bibendum. Sed non consectetur elit. Maecenas volutpat, nisl eget bibendum consectetur,
+						<a href="#" class="readmore">Read More</a>
+						</p>
+					</article>
+					<div class="postbtm"></div>
+					-->
+					<!-- one end -->
+
+
+					<!-- pagination -->
+					<!--
+					<div class="wp-pagenavi">
+						<span class="current">1</span><a href="/page/2/" title="2">2</a><a href="/page/3/" title="3">3</a><a href="/page/4/" title="4">4</a><a href="/page/5/" title="5">5</a><a href="/page/6/" title="6">6</a><a href="/page/7/" title="7">7</a><a href="/page/8/" title="8">8</a><a href="/page/2/">Next &raquo;</a><span class="extend">...</span><a href="/page/27/" title="Last &raquo;">Last &raquo;</a>
+					</div>
+					-->
+					<!-- pagination end -->
+
+				</div>
+				<!-- left content wrap end -->
+			</section>
+			<!-- post info section end -->
+
+		</section>
+		<!-- left section end -->
+		
+		<section id="sidebar">
+
+			<h2 title="Categories">片言只字</h2>
+			<div class="sb-c">
+				<p class="testimonial">
+					文字在本质上就是不完整的容器。	
+					<span>村上春树</span>
+				</p>
+				<p class="testimonial">
+					美的东西是不需要灵魂的，只需要美就够了。
+					<span>未知出处</span>
+				</p>
+			</div>
+			
+			
+			<h2 title="栏目">分类</h2>
+			<div class="sb-c">
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="aishuorendejiedao.html">爱说人的街道</a></li>
+				<li><a href="zhuanzai.html">转载空间</a></li>
+				<li><a href="haishinapianhai.html">还是那片海</a></li>
+			</ul>
+			
+		</div>
+
+	</section>
+
+	
+	<div class="clear"></div>
+
+</div>
+
+</div>
+
+<!-- bottom -->
+<div id="bottom">
+
+	<div id="btmwrap">
+		<section id="briefbio">
+		<h2>谁啊 ?</h2>
+		<p>
+			总之，是一个很不愿意介绍自己的人吧。
+		</p>
+		</section>
+		
+		<section id="latestproject">
+
+			<!--
+<h2>Latest Project</h2>
+<div class="portfoliopre">
+<div class="pf-thumb">
+  <img src="images/portfoliothumb.jpg" width="245" height="125" alt="portfolio" />
+  </div>
+<div class="pf-txt">
+<h3>CSSHeaven.org</h3>
+<p>CSS heaven a pet project of mine. This website was designed to provide free and opensource  css templates</p>
+</div>
+-->
+
+<div class="clear"></div>
+
+</div>
+
+</section>
+
+</div>
+<div class="clear"></div>
+</div>
+<footer>
+	<p>2013 &copy; QiCreate.com| 保留所有权利 <img src="http://img.tongji.linezing.com/3538442/tongji.gif" /></p>
+
+</footer>
+</body>
+</html>
