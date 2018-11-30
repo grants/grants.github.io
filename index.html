@@ -10,17 +10,11 @@
 	<link href="html5.css" rel="stylesheet" type="text/css">
 	<![endif]-->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/processImgSrc.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			$("a[href='content_newest.html']").parent("p").hide();
 			$("a").attr("target", "_top");
-
-			// process image path problem
-			$("img").each(function() {
-				var oldsrc = $(this).attr("src");
-				var newsrc = oldsrc.replace("../mywiki/i7haowiki","");
-				$(this).attr("src", newsrc);
-			});
 		})
 
 		function autoResize(id){
@@ -96,11 +90,6 @@
 <img src="../mywiki/i7haowiki/images/aishuoren.jpg" /> 
 <a href="aishuorendejiedao.html">爱说人的街道</a> 
 有些人总是走在回忆的路上,生命不过是回溯的旅程。
-</p>
-
-<p>
-linshi
-dd
 </p>
 
 <p>
