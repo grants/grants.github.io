@@ -14,23 +14,21 @@
 		$(function() {
 			$("a[href='content_newest.html']").parent("p").hide();
 			$("a").attr("target", "_top");
-			redirectToXadaili();
+
+			// process image path problem
+			$("img").each(function() {
+				var oldsrc = $(this).attr("src");
+				var newsrc = oldsrc.replace("../mywiki/i7haowiki","");
+				$(this).attr(newsrc);
+			});
 		})
 
-		var redirectToXadaili = function() {
-			var host = window.location.host;
-			if (host == "xadaili.com" || host == "www.xadaili.com") {
-				location.href="http://qicreate.com/xadaili.html";
-			}
-		}
-	</script>
-	<script type="text/javascript">
 		function autoResize(id){
 			var newheight;
 			var newwidth;
 			if(document.getElementById){
-				newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
-				newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
+				newheight=document.getElementById(id).contentWindow.document.body.scrollHeight;
+				newwidth=document.getElementById(id).contentWindow.document.body.scrollWidth;
 			}
 			document.getElementById(id).height= (newheight) + "px";
 			document.getElementById(id).width= (newwidth) + "px";
@@ -43,7 +41,7 @@
 	<div id="wrap">
 
 	<header id="mainheader">
-		<h1>I7<span>H-AO</span></h1>
+		<h1>I7<span> H-AO</span></h1>
 		<p class="description">别再说 是谁的错 | i7hao.com</p>
 	</header>
 
@@ -97,7 +95,7 @@
 <p>
 <img src="../mywiki/i7haowiki/images/aishuoren.jpg" /> 
 <a href="csandlife.html">零一</a> 
-他们总说数字时代，零和一组成的长廊。
+他们总说数字的时代是零和一组成的长廊。
 </p>
 
 <p>
@@ -230,7 +228,6 @@
 </div>
 <footer>
 	<p>2018 &copy; i7hao.com| 保留所有权利</p>
-
 </footer>
 </body>
 </html>
