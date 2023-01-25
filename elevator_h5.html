@@ -23,6 +23,14 @@
 			canvas.width = 640
 			canvas.height = 480
 
+			// put the still image in the right relative position
+			var canvas_rect_pos = canvas.getBoundingClientRect();
+			console.log(canvas_rect_pos)
+			var theStatusImgContainer = document.getElementById("status_img_container");
+			theStatusImgContainer.style.left = (parseInt(canvas_rect_pos.left) + 0).toString() + "px";
+			theStatusImgContainer.style.top = (parseInt(canvas_rect_pos.top) + 40).toString() + "px";
+			theStatusImgContainer.style.display = ""
+
 			// get the 2D context from the canvas id
 			const ctx = canvas.getContext("2d");
 
@@ -196,7 +204,7 @@
 				draw: (ctx) => {
 					ctx.font = "40px Verdana"
 					ctx.fillStyle = "white"
-					ctx.fillText(statusText.content, 352, 420)
+					ctx.fillText(statusText.content, 340, 420)
 				},
 				update: (ctx) => {
 					if (status === "up") {
@@ -218,7 +226,7 @@
 							ctx.shadowOffsetX = 8;
 							ctx.shadowOffsetY = 4;
 							ctx.shadowBlur = 10;
-							ctx.fillText(statusText.content, 352, 420)
+							ctx.fillText(statusText.content, 340, 420)
 							// line in middle
 							ctx.fillRect(0, 350, canvas.width, 4)
 						}
@@ -230,7 +238,7 @@
 							ctx.shadowOffsetX = 8;
 							ctx.shadowOffsetY = 4;
 							ctx.shadowBlur = 10;
-							ctx.fillText(statusText.content, 352, 420)
+							ctx.fillText(statusText.content, 340, 420)
 						}
 					}
 
@@ -376,7 +384,7 @@
 				// up arrow
 				if (status === "still") {
 					if (stillImage.image.complete) {
-						stillImage.draw(ctx)
+						//stillImage.draw(ctx)
 					}
 					statusText.content = "静 止";
 					statusText.draw(ctx)
@@ -385,7 +393,7 @@
 
 				if (status === "up") {
 					if (upImage.image.complete) {
-						upImage.draw(ctx)
+						//upImage.draw(ctx)
 					}
 					statusText.content = "上 升";
 					statusText.draw(ctx)
@@ -394,7 +402,7 @@
 
 				if (status === "down") {
 					if (downImage.image.complete) {
-						downImage.draw(ctx)
+						//downImage.draw(ctx)
 					}
 					statusText.content = "下 降";
 					statusText.draw(ctx)
@@ -403,7 +411,7 @@
 
 				if (status === "warning") {
 					if (stillImage.image.complete) {
-						stillImage.draw(ctx)
+						//stillImage.draw(ctx)
 					}
 					statusText.content = "错 误";
 					statusText.draw(ctx)
@@ -437,6 +445,7 @@
 			} else {
 				status = "up"
 				document.getElementById("status_img").setAttribute("src", "./resource/bubble_up_pink.gif")
+				document.getElementById("status_img").style.height = "260px";
 				window.upInterval = setInterval(()=>{
 					if (floor < targetFloor) {
 						floor++
@@ -455,6 +464,7 @@
 			} else {
 				status = "down"
 				document.getElementById("status_img").setAttribute("src", "./resource/bubble_down_no1.gif")
+				document.getElementById("status_img").style.height = "260px";
 				window.downInterval = setInterval(()=>{
 					if (floor > targetFloor) {
 						floor--
@@ -468,6 +478,7 @@
 		}
 
 		var stillaction = function() {
+			console.log("still action")
 			if (window.downInterval !== undefined && window.downInterval !== "undefined") {
 				clearInterval(window.downInterval)
 			}
@@ -477,29 +488,49 @@
 			showNowFloor()
 			status = "still"
 			document.getElementById("status_img").setAttribute("src", "./resource/bubble_still.gif")
+			document.getElementById("status_img").style.height = "260px";
 		}
 
 	</script>
 </head>
 <body style="margin: 0; padding: 0">
 
-<div style="z-index:11;position:absolute; top: 300px; left: 160px; width: 640px; height: 480px;">
-	<img id="status_img" src="resource/bubble_still.gif" alt="statusimg" style="height: 180px;"/>
+<div>
+	<h4>电梯显示部分: </h4>
 </div>
 
-<div id="canvas" style="z-index: 999">
-	<canvas style="z-index: 999"></canvas>
+<div id="main">
+
+
+
+	<div id="status_img_container" style="display:none; z-index:11; position:absolute; width: 640px; height: 480px;">
+		<img id="status_img" src="resource/bubble_still.gif" alt="statusimg" style="height: 260px;"/>
+	</div>
+
+	<div id="canvas" style="z-index: 999">
+		<canvas style="z-index: 999"></canvas>
+	</div>
+
 </div>
 
+<div>
+	<h4 style="color: darkred">以下按钮为方便查看和模拟发送信号测试, 实际产品中不会出现:</h4>
+</div>
+<style>
+.sbtn {
+	min-width: 180px;
+	min-height: 50px;
+}
+</style>
 <div style="margin-bottom: 1em">
-	<button onclick="stillaction()">静止</button>
+	<button class="sbtn" onclick="stillaction()">电梯收到停止(静止)状态</button>
 	当前楼层: <span id="nowFloor"></span>
 </div>
 <div style="margin-bottom: 1em">
-	<button onclick="upaction()">上升</button>到 <input id="upTargetFloor" type="text" value="22">楼
+	<button class="sbtn" onclick="upaction()">电梯收到上升信号</button>到 <input id="upTargetFloor" type="text" value="22">楼
 </div>
 <div>
-	<button onclick="downaction()">下降</button>到 <input id="downTargetFloor" type="text" value="1">楼
+	<button class="sbtn" onclick="downaction()">电梯收到下行信号</button>到 <input id="downTargetFloor" type="text" value="1">楼
 </div>
 
 </body>
